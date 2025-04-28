@@ -2,14 +2,15 @@
 
 use App\Http\Controllers\ListProdukController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TiketController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/listproduk', [ListProdukController::class, 'show'] );
-Route::post('/listproduk', [ListProdukController::class, 'simpan'])->name('produk.simpan');
-Route::delete('/listproduk/{id}', [ListProdukController::class, 'delete'] )->name('produk.delete');
+//route resource for products
+Route::resource('/products', \App\Http\Controllers\TiketController::class);
+
 
 
 
